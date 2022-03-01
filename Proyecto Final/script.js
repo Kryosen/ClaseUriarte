@@ -161,7 +161,5 @@ function pokedex() {
   let opcionesPokemon = Number(prompt("Seleciona el numero de Pokedex"));
 
   // console.log(pokemons[opcionesPokemon - 1]);
-  console.log(pokemons.find(({ id }) => id === opcionesPokemon));
+  console.log(pokemons.find((pokes) => pokes.id === opcionesPokemon));
 }
-const { id } = pokemons[0];
-console.log(id);
