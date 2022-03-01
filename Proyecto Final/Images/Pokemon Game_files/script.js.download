@@ -1,0 +1,76 @@
+//Menu de Inicio de Juego
+/*1- Mostrar un menu con varias opciones
+  2- El usuario tiene que selecionar a que menu deberia entrar
+  3- Mostrar el nuevo menu con las opciones
+  */
+
+////////////  MENU DEL JUEGO  //////////////////
+
+alert("Bienvenido al mundo de Pokemon");
+
+let opciones;
+
+menu();
+
+/////////// FUNCIONES ///////////////
+
+function menu() {
+  opciones = prompt("Pokemon Red Online\n Start \n Options \n Exit");
+
+  while (opciones != "Start" && opciones != "Options" && opciones != "Exit") {
+    opciones = prompt(
+      "Selecciona una opcion correcta.\n Start \n Options \n Exit"
+    );
+  }
+
+  switch (opciones) {
+    case "Start":
+      alert("El juego comienza!");
+      break;
+    case "Options":
+      options();
+      break;
+    default:
+      alert("Nos vemos pronto!");
+      break;
+  }
+
+
+function options() {
+  opciones = prompt(
+    "Opciones del juego:\n Sound \n Text Speed \n Screen Size\n Exit "
+  );
+  while (
+    opciones != "Sound" &&
+    opciones != "Text Speed" &&
+    opciones != "Screen Size" &&
+    opciones != "Exit"
+  ) {
+    opciones = prompt(
+      "Selecciona una opcion correcta.Opciones del juego:\n Sound \n Text Speed \n Screen Size\n Exit"
+    );
+  }
+
+  switch (opciones) {
+    case "Sound":
+      prompt("Selecciona el Volumen con un numero del 1 al 10");
+      alert("Volumen guardado!");
+      options();
+      break;
+    case "Text Speed":
+      prompt("Selecciona la velocidad del texto:\n 1 \n 2 \n 3");
+      alert("Velocidad de texto guardada!");
+      options();
+      break;
+    case "Screen Size":
+      prompt(
+        "Selecciona el tamaño de la pantalla:\n 720×480 \n 1280x720 \n 1920x1080"
+      );
+      alert("Tamaño de pantalla guardado!");
+      options();
+      break;
+    default:
+      menu();
+      break;
+  }
+}

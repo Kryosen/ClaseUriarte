@@ -1,0 +1,84 @@
+/* INICIALIZANDO EL CSS */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* HEADER COMIENZA */
+
+/*CONFIGURACION LOGO */
+.encabezado {
+  background-color: rgb(247, 46, 46);
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.divImagen {
+  width: 25%;
+}
+
+.imagen {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+}
+
+/*CONFIGURACION NAVBAR*/
+.navBar {
+  width: 75%;
+}
+
+.divLista {
+  margin-top: 9rem;
+}
+
+.lista {
+  display: flex;
+}
+
+.itemLista {
+  width: 33%;
+  padding: auto;
+  font-size: 2rem;
+  list-style: none;
+  text-align: center;
+}
+
+/*   MAIN COMIENZA  */
+
+main {
+  background-image: url(images/Pallet\ Town.png);
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.trainer {
+  background-image: url(images/Trainer-idle.png);
+  background-size: auto;
+  width: 5rem;
+  height: 5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 50%;
+}
+
+/* FOOTER COMIENZA */
+
+footer {
+  margin-top: 10px;
+}
+
+.contenedorCopyright {
+  padding-top: 2rem;
+  background-color: rgb(247, 46, 46);
+  height: 100px;
+}
+
+.copyRight {
+  font-size: 2rem;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+main {
+  background-image: url(images/Pallet\ Town.png);
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.trainer {
+  background-image: url(images/Trainer-idle.png);
+  background-size: auto;
+  width: 5rem;
+  height: 5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 50%;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+}
+
+.encabezado {
+  background-color: rgb(247, 46, 46);
+  display: flex;
+}
+
+.lista {
+  display: flex;
+}
+
+.navBar {
+  width: 75%;
+}
+
+.divImagen {
+  width: 25%;
+}
+
+.itemLista {
+  width: 33%;
+  padding: auto;
+  font-size: 2rem;
+  list-style: none;
+  text-align: center;
+}
