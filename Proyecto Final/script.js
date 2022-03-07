@@ -96,7 +96,7 @@ function menu() {
     opciones != "Exit"
   ) {
     opciones = prompt(
-      "Selecciona una opcion correcta.\n Start \n Options \n Exit"
+      "Selecciona una opcion correcta.\n Start \n PokeDex \n Options \n Exit"
     );
   }
 
