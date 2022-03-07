@@ -84,8 +84,6 @@ const pokemons = [
   },
 ];
 
-menu();
-
 /////////// FUNCIONES ///////////////
 
 function menu() {
@@ -163,3 +161,7 @@ function pokedex() {
   // console.log(pokemons[opcionesPokemon - 1]);
   console.log(pokemons.find((pokes) => pokes.id === opcionesPokemon));
 }
+
+/////////////  Llamado de la funcion menu() //////////////////
+
+menu();
