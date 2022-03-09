@@ -12,7 +12,7 @@
 .encabezado {
   background-color: rgb(247, 46, 46);
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .divImagen {
@@ -21,8 +21,9 @@
 
 .imagen {
   padding: 10px;
-  width: 100%;
+  width: 65%;
   height: auto;
+  margin: 10px;
 }
 
 /*CONFIGURACION NAVBAR*/
@@ -41,14 +42,172 @@
 .itemLista {
   width: 33%;
   padding: auto;
-  font-size: 2rem;
+  font-size: 2.5rem;
   list-style: none;
-  text-align: center;
+  text-align: left;
+  text-decoration: none;
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
 
-/*   MAIN COMIENZA  */
+.itemLista a {
+  text-decoration: none;
+  color: black;
+}
 
-main {
+/* MAIN COMIENZA */
+
+main h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+main h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  text-decoration: underline;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+}
+
+main p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.contenedorPokered {
+  margin: auto;
+  width: 90%;
+  border: 5px solid rgb(247, 46, 46);
+}
+
+span {
+  color: red;
+}
+
+.contenedorFotoRed {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contenedorFotoRed img {
+  width: 35%;
+}
+
+.cajaCronologia {
+  padding: 0;
+  margin: 0;
+}
+
+.cajaFechas {
+  margin: auto;
+  width: fit-content;
+  padding: 2px;
+  border: 2px solid black;
+}
+
+.PokemonRedYBlue {
+  background-image: url(Images/PokemonRYB.png);
+}
+
+.PokemonYellow {
+  background-image: url(Images/PokemonYellowCover.jpg);
+}
+
+.PokemonGoldAndSilver {
+  background-image: url(Images/PokemonGYS.png);
+}
+
+.PokemonCrystal {
+  background-image: url(Images/PokemonCrystal.png);
+}
+
+.PokemonRubyAndSapphire {
+  background-image: url(Images/PokemonRYS.JPG);
+}
+
+.PokemonEmerald {
+  background-image: url(Images/PokemonEmerald.jpg);
+}
+
+.PokemonFireredAndLeafgreen {
+  background-image: url(Images/PokemonFRYLG.jpg);
+}
+
+.PokemonDiamondAndPearl {
+  background-image: url(Images/PokemonDYP.jpg);
+}
+
+.PokemonPlatinum {
+  background-image: url(Images/PokemonPL.png);
+}
+
+.PokemonHeartGoldAndSoulSilver {
+  background-image: url(Images/PokemonHGYSS.jpg);
+}
+
+.PokemonBlackAndWhite {
+  background-image: url(Images/PokemonBYW.jfif);
+}
+
+.PokemonBlack2AndWhite2 {
+  background-image: url(Images/PokemonB2YW2.png);
+}
+
+.PokemonXAndY {
+  background-image: url(Images/PokemonXYY.jpg);
+}
+
+.PokemonOmegaRubyAndAlphaSapphire {
+  background-image: url(Images/PokemonORYAS.jfif);
+}
+
+.PokemonSunAndMoon {
+  background-image: url(Images/PokemonSYM.jpg);
+}
+
+.PokemonUltraSunAndUltraMoon {
+  background-image: url(Images/PokemonUSYUM.jpg);
+}
+
+.PokemonPikachuAndEevee {
+  background-image: url(Images/PokemonLGPYE.JPG);
+}
+
+.PokemonSwordAndShield {
+  background-image: url(Images/PokemonSYS.JPG);
+}
+
+.CajasCronologiaBootstrap {
+  height: 280px;
+}
+
+.cajaImagenesInicio {
+  height: 65%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.cajaDatosIndex {
+  height: 35%;
+}
+
+.cronologiaTexto {
+  text-align: center;
+}
+/*   JUEGO COMIENZA  */
+
+.mapa {
   background-image: url(images/Pallet\ Town.png);
   height: 1000px;
   background-size: cover;
@@ -69,7 +228,7 @@ main {
 /* FOOTER COMIENZA */
 
 footer {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .contenedorCopyright {
@@ -81,4 +240,56 @@ footer {
 .copyRight {
   font-size: 2rem;
   text-align: center;
+}
+
+/*    POKEDEX PAGE */
+
+.pokedexContainer {
+  height: 1000px;
+  background-color: rgb(236, 236, 228);
+}
+
+.contenedorImagen {
+  width: 100%;
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contenedoresPokedex {
+  height: 630px;
+  border-color: #f7932e !important;
+}
+
+.pokedexContainer {
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+}
+
+.contenedorHeader h2 {
+  text-align: center;
+  width: fit-content !important;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.contenedorHeader h4 {
+  text-align: center;
+  width: fit-content !important;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.contenedorHeader h5 {
+  text-align: center;
+  /* width: fit-content !important;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: auto; */
 }

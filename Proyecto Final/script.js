@@ -102,7 +102,7 @@ function menu() {
 
   switch (opciones) {
     case "Start":
-      alert("El juego comienza!");
+      welcomePage();
       break;
     case "Options":
       options();
@@ -113,6 +113,17 @@ function menu() {
     default:
       alert("Nos vemos pronto!");
       break;
+  }
+
+  function welcomePage() {
+    const nombre = document.getElementById("nombre");
+    nombre.innerHTML = `Hola <span>${prompt("Cual es tu nombre?")}</span>!`;
+    const bienvenida = document.getElementById("bienvenida");
+    bienvenida.innerText = `${
+      prompt("Eres un chico o una chica?") === "chico"
+        ? "Bienvenido"
+        : "Bienvenida"
+    } al mundo de Pokémon`;
   }
 
   function options() {
@@ -165,3 +176,99 @@ function pokedex() {
 /////////////  Llamado de la funcion menu() //////////////////
 
 menu();
+
+///////////////////// DOM /////////////////////
+
+function initPokedex() {
+  for (let i = 0; i <= 8; i++) {
+    //////  SET IMAGE TO THE CONTAINER
+    let pokeIMG = document.getElementById(`imagen${i + 1}`);
+    pokeIMG.style.setProperty(
+      "background-image",
+      `url(Images/Pokedex/${i + 1}.png)`
+    );
+    ////////////////// Creando ELEMENTO
+    let padre = document.getElementById(`contenedorPoke${i + 1}`);
+
+    let contenedor = document.createElement("div");
+    contenedor.classList.add("contenedorHeader");
+
+    contenedor.innerHTML = `<h2 class="border border-dark rounded"> ${
+      pokemons[i].nombre
+    }</h2>
+                            <h4 style= "background-image: linear-gradient(90deg,${colorTipo()}
+                              )"> Tipo: ${pokemons[i].tipo}</h4>
+                            <h5> Numero: ${pokemons[i].id}</h5>
+                            <h5> Descripcion: ${pokemons[i].descripcion}</h5>`;
+
+    padre.appendChild(contenedor);
+
+    // ////////   SET DATA TO CONTAINER
+    // let pokeName = document.getElementById(`pokemonName${i + 1}`);
+    // pokeName.innerText = pokemons[i].nombre;
+
+    // let tipo = document.createElement("h4");
+    // tipo.innerHTML = "";
+
+    function colorTipo() {
+      if (pokemons[i].tipo.length === 1) {
+        let tipo1 = pokemons[i].tipo[0];
+        switch (tipo1) {
+          case "Fuego":
+            return `hsl(0deg 100% 48%) 1%,
+            hsl(0deg 100% 48%) 43%,
+            hsl(0deg 100% 48%) 50%,
+            hsl(0deg 100% 48%) 51%,
+            hsl(0deg 100% 48%) 51%,
+            hsl(0deg 100% 48%) 49%,
+            hsl(0deg 100% 48%) 49%,
+            hsl(0deg 100% 48%) 50%,
+            hsl(0deg 100% 48%) 57%,
+            hsl(0deg 100% 48%) 99%`;
+            break;
+          case "Agua":
+            return ` hsl(213deg 100% 55%) 1%,
+            hsl(213deg 100% 55%) 43%,
+            hsl(213deg 100% 55%) 50%,
+            hsl(213deg 100% 55%) 51%,
+            hsl(213deg 100% 55%) 51%,
+            hsl(213deg 100% 55%) 49%,
+            hsl(213deg 100% 55%) 49%,
+            hsl(213deg 100% 55%) 50%,
+            hsl(213deg 100% 55%) 57%,
+            hsl(213deg 100% 55%) 99%`;
+          default:
+            break;
+        }
+      } else if (pokemons[i].tipo.length === 2) {
+        let tipo1 = pokemons[i].tipo[0];
+        let tipo2 = pokemons[i].tipo[1];
+        switch ((tipo1, tipo2)) {
+          case ("Planta", "Veneno"):
+            return `hsl(129deg 100% 26%) 1%,
+            hsl(132deg 46% 34%) 43%,
+            hsl(143deg 29% 36%) 50%,
+            hsl(168deg 15% 37%) 51%,
+            hsl(224deg 12% 41%) 51%,
+            hsl(260deg 19% 44%) 49%,
+            hsl(272deg 30% 44%) 49%,
+            hsl(278deg 42% 43%) 50%,
+            hsl(282deg 58% 42%) 57%,
+            hsl(287deg 100% 35%) 99%`;
+            break;
+          case ("Fuego", "Volador"):
+            return `hsl(0deg 100% 48%) 1%,
+            hsl(357deg 77% 61%) 43%,
+            hsl(355deg 60% 65%) 50%,
+            hsl(350deg 41% 67%) 51%,
+            hsl(335deg 20% 68%) 51%,
+            hsl(233deg 12% 71%) 49%,
+            hsl(199deg 37% 71%) 49%,
+            hsl(192deg 60% 70%) 50%,
+            hsl(189deg 82% 68%) 57%,
+            hsl(187deg 100% 65%) 99%`;
+        }
+      }
+    }
+  }
+}
