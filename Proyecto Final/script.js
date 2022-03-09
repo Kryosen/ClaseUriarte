@@ -6,8 +6,6 @@
 
 ////////////  MENU DEL JUEGO  //////////////////
 
-alert("Bienvenido al mundo de Pokemon");
-
 let opciones;
 const pokemons = [
   {
@@ -87,6 +85,7 @@ const pokemons = [
 /////////// FUNCIONES ///////////////
 
 function menu() {
+  alert("Bienvenido al mundo de Pokemon");
   opciones = prompt("Pokémon Red Online\n Start \n PokeDex \n Options \n Exit");
 
   while (
@@ -174,8 +173,6 @@ function pokedex() {
 }
 
 /////////////  Llamado de la funcion menu() //////////////////
-
-menu();
 
 ///////////////////// DOM /////////////////////
 
