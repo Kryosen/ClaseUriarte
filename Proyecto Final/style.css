@@ -21,7 +21,7 @@
 
 .imagen {
   padding: 10px;
-  width: 65%;
+  width: 50%;
   height: auto;
   margin: 10px;
 }
@@ -32,7 +32,7 @@
 }
 
 .divLista {
-  margin-top: 9rem;
+  margin-top: 5rem;
 }
 
 .lista {
@@ -207,22 +207,22 @@ span {
 }
 /*   JUEGO COMIENZA  */
 
-.mapa {
+.background {
   background-image: url(images/Pallet\ Town.png);
-  height: 1000px;
+  height: 96rem;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .trainer {
-  background-image: url(images/Trainer-idle.png);
+  background-image: url(images/Trainer-idle-front.png);
   background-size: auto;
-  width: 5rem;
-  height: 5rem;
-  background-size: cover;
+  width: inherit;
+  height: inherit;
+  background-size: 10%;
   background-repeat: no-repeat;
   background-position: center;
-  margin-left: 50%;
+  margin-left: 23%;
 }
 
 /* FOOTER COMIENZA */
@@ -293,3 +293,14 @@ footer {
   padding-right: 3px;
   margin: auto; */
 }
+
+/***   JUEGO COMIENZA   ***/
+
+/* .background {
+  width: 100%;
+  height: 100vh;
+  background-size: 200%;
+  background-image: url(Images/Pallet\ Town.png);
+  background-repeat: no-repeat;
+  background-position: center;
+} */
