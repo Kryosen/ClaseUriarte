@@ -304,3 +304,26 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
 } */
+
+/* GAME PROPERTIES */
+
+#game-container {
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  min-width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-container > canvas {
+  border: 3.5px solid black;
+}
+
+canvas {
+  transform: scale(3, 3);
+}

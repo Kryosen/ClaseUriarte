@@ -114,40 +114,6 @@ function menu() {
       break;
   }
 
-  function welcomePage() {
-    // GUARDANDO DATA EN LOCAL STORAGE CON JASON
-    if (localStorage.getItem("nombre") && localStorage.getItem("bienvenida")) {
-      const nombre = document.getElementById("nombre");
-      nombre.innerHTML = `Hola nuevamente <span>${JSON.parse(
-        localStorage.getItem("nombre")
-      )}</span>!`;
-      const bienvenida = document.getElementById("bienvenida");
-      bienvenida.innerText = `${JSON.parse(
-        localStorage.getItem("bienvenida")
-      )} de vuelta al mundo de Pokémon`;
-    } else {
-      const nombre = document.getElementById("nombre");
-      nombre.innerHTML = `Hola <span>${requestNombre()}</span>!`;
-      const bienvenida = document.getElementById("bienvenida");
-      bienvenida.innerText = `${requestIdentidad()} al mundo de Pokémon`;
-    }
-  }
-
-  function requestNombre() {
-    let nombre = prompt("Cual es tu nombre?");
-    localStorage.setItem("nombre", JSON.stringify(nombre));
-    return nombre;
-  }
-
-  function requestIdentidad() {
-    let identidad =
-      prompt("Eres un chico o una chica?") === "chico"
-        ? "Bienvenido"
-        : "Bienvenida";
-    localStorage.setItem("bienvenida", JSON.stringify(identidad));
-    return identidad;
-  }
-
   function options() {
     opciones = prompt(
       "Opciones del juego:\n Sound \n Text Speed \n Screen Size\n Exit "
@@ -186,6 +152,40 @@ function menu() {
         break;
     }
   }
+}
+
+function welcomePage() {
+  // GUARDANDO DATA EN LOCAL STORAGE CON JASON
+  if (localStorage.getItem("nombre") && localStorage.getItem("bienvenida")) {
+    const nombre = document.getElementById("nombre");
+    nombre.innerHTML = `Hola nuevamente <span>${JSON.parse(
+      localStorage.getItem("nombre")
+    )}</span>!`;
+    const bienvenida = document.getElementById("bienvenida");
+    bienvenida.innerText = `${JSON.parse(
+      localStorage.getItem("bienvenida")
+    )} de vuelta al mundo de Pokémon`;
+  } else {
+    const nombre = document.getElementById("nombre");
+    nombre.innerHTML = `Hola <span>${requestNombre()}</span>!`;
+    const bienvenida = document.getElementById("bienvenida");
+    bienvenida.innerText = `${requestIdentidad()} al mundo de Pokémon`;
+  }
+}
+
+function requestNombre() {
+  let nombre = prompt("Cual es tu nombre?");
+  localStorage.setItem("nombre", JSON.stringify(nombre));
+  return nombre;
+}
+
+function requestIdentidad() {
+  let identidad =
+    prompt("Eres un chico o una chica?") === "chico"
+      ? "Bienvenido"
+      : "Bienvenida";
+  localStorage.setItem("bienvenida", JSON.stringify(identidad));
+  return identidad;
 }
 
 function pokedex() {
