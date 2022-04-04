@@ -7,80 +7,82 @@
 ////////////  MENU DEL JUEGO  //////////////////
 
 let opciones;
-const pokemons = [
-  {
-    id: 1,
-    nombre: "Bulbasaur",
-    clasificacion: "Pokémon Semilla",
-    descripcion:
-      "Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.",
-    tipo: ["Planta", "Veneno"],
-  },
-  {
-    id: 2,
-    nombre: "Ivysaur",
-    clasificacion: "Pokémon Semilla",
-    descripcion:
-      "Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras.",
-    tipo: ["Planta", "Veneno"],
-  },
-  {
-    id: 3,
-    nombre: "Venusaur",
-    clasificacion: "Pokémon Semilla",
-    descripcion:
-      "La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.",
-    tipo: ["Planta", "Veneno"],
-  },
-  {
-    id: 4,
-    nombre: "Charmander",
-    clasificacion: "Pokémon lagarto",
-    descripcion:
-      "Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.",
-    tipo: ["Fuego"],
-  },
-  {
-    id: 5,
-    nombre: "Charmeleon",
-    clasificacion: "Pokémon Llameante",
-    descripcion:
-      "Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras.",
-    tipo: ["Fuego"],
-  },
-  {
-    id: 6,
-    nombre: "Charizard",
-    clasificacion: "Pokémon Llameante",
-    descripcion:
-      "Escupe un fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.",
-    tipo: ["Fuego", "Volador"],
-  },
-  {
-    id: 7,
-    nombre: "Squirtle",
-    clasificacion: "Pequeño Pokémon Tortuga",
-    descripcion:
-      "Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.",
-    tipo: ["Agua"],
-  },
-  {
-    id: 8,
-    nombre: "Wartortle",
-    clasificacion: "Pokémon Tortuga",
-    descripcion:
-      "Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón.",
-    tipo: ["Agua"],
-  },
-  {
-    id: 9,
-    nombre: "Blastoise",
-    clasificacion: "Pokémon Armazón",
-    descripcion:
-      "Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.",
-    tipo: ["Agua"],
-  },
-];
+let pokemons = [];
+
+//////////////  USANDO FETCH PARA RECIBIR ALGUN TIPO DE INFO DE LA APO
+const url = "https://pokeapi.co/api/v2/pokemon?limit=9&offset=0";
+
+fetch(url)
+  .then((res) => res.json())
+  .then((json) => {
+    crearPokemones(json.results);
+  });
+
+/////// A TENER EN CUENTA QUE EN LA API DE POKEMON AL HACE UNA PETICION DE 9 POKEMONES, SOLO SE RECIBE EL NOMBRE, EL ID, Y OTRA URL HACIA EL POKEMON EN SI, ENTONCES PARA NO HACER PETICIONES DE MAS DE 12 LINEAS CADA UNO, ME PARECIO PRUDENTE USAR SOLAMENTE EL NOMBRE Y EL ID PARA HACER EL FETCH
+
+function crearPokemones(pokemones) {
+  pokemons = [
+    {
+      clasificacion: "Pokémon Semilla",
+      descripcion:
+        "Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.",
+      tipo: ["Planta", "Veneno"],
+    },
+    {
+      clasificacion: "Pokémon Semilla",
+      descripcion:
+        "Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras.",
+      tipo: ["Planta", "Veneno"],
+    },
+    {
+      clasificacion: "Pokémon Semilla",
+      descripcion:
+        "La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.",
+      tipo: ["Planta", "Veneno"],
+    },
+    {
+      clasificacion: "Pokémon lagarto",
+      descripcion:
+        "Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.",
+      tipo: ["Fuego"],
+    },
+    {
+      clasificacion: "Pokémon Llameante",
+      descripcion:
+        "Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras.",
+      tipo: ["Fuego"],
+    },
+    {
+      clasificacion: "Pokémon Llameante",
+      descripcion:
+        "Escupe un fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.",
+      tipo: ["Fuego", "Volador"],
+    },
+    {
+      clasificacion: "Pequeño Pokémon Tortuga",
+      descripcion:
+        "Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.",
+      tipo: ["Agua"],
+    },
+    {
+      clasificacion: "Pokémon Tortuga",
+      descripcion:
+        "Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón.",
+      tipo: ["Agua"],
+    },
+    {
+      clasificacion: "Pokémon Armazón",
+      descripcion:
+        "Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.",
+      tipo: ["Agua"],
+    },
+  ];
+
+  for (let index = 0; index < pokemones.length; index++) {
+    pokemons[index].nombre = pokemones[index].name;
+    pokemons[index].id = index + 1;
+  }
+}
 
 /////////// FUNCIONES ///////////////
 
