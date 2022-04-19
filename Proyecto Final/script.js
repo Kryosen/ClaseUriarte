@@ -9,7 +9,7 @@
 let opciones;
 let pokemons = [];
 
-//////////////  USANDO FETCH PARA RECIBIR ALGUN TIPO DE INFO DE LA APO
+//////////////  USANDO FETCH PARA RECIBIR ALGUN TIPO DE INFO DE LA API
 const url = "https://pokeapi.co/api/v2/pokemon?limit=9&offset=0";
 
 fetch(url)
@@ -202,6 +202,7 @@ function pokedex() {
 ///////////////////// DOM /////////////////////
 
 function initPokedex() {
+  console.log(pokemons);
   for (let i = 0; i <= 8; i++) {
     //////  SET IMAGE TO THE CONTAINER
     let pokeIMG = document.getElementById(`imagen${i + 1}`);
